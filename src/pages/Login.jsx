@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineUser, AiOutlineCheck } from "react-icons/ai";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import Spline from "../components/Spline";
+
 import { login, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
 
@@ -95,11 +95,32 @@ function Login() {
           </form>
         </section>
       </div> */}
-      <Spline/>
-      <div className="w-full h-[91.5vh] flex sm:flex-row flex-col">
-      
-        <div className="w-[100%] sm:w-[55%] flex-col justify-center items-center gap-4 bg-black"></div>
-        <div className="w-[100%] sm:w-[45%] flex flex-col justify-center items-center gap-4 bg-black">
+
+      <div className="w-full flex sm:flex-row flex-col h-[91.5vh] bg-new-ticket bg-cover">
+        <div className="w-full sm:w-[55%] flex-col justify-center items-center gap-4 text-white">
+          <div class=" p-6 rounded-lg shadow-md flex-col justify-center text-center m-32  ">
+            <p class=" font-extrabold text-3xl h-auto p-4 mb-6">
+              About Our Ticket Support System
+            </p>
+            <p class=" mb-2">
+              Our ticket support system is designed to provide efficient
+              assistance to our valued customers. Whether you have inquiries,
+              need technical support, or have any concerns, our dedicated team
+              is here to help you every step of the way.
+            </p>
+            <p class=" mb-2">
+              With our streamlined ticketing process, you can easily submit your
+              requests, track their progress, and receive timely updates until
+              your issue is resolved satisfactorily.
+            </p>
+            <p class="">
+              We prioritize excellent customer service and aim to address your
+              needs promptly, ensuring a smooth and hassle-free experience for
+              you.
+            </p>
+          </div>
+        </div>
+        <div className="w-full sm:w-[45%] flex flex-col justify-center items-center gap-4 h-full  opacity-90">
           {/* <form onSubmit={onSubmit} className="w-[80%]">
             <div className="form-group">
               <input
@@ -128,7 +149,7 @@ function Login() {
             </div>
           </form> */}
           <section
-            class="bg-gray-50 rounded-xl dark:bg-gray-900 w-[70%] shadow-white shadow-md"
+            class="bg-gray-50 rounded-xl dark:bg-gray-900 w-[70%] shadow-md"
             onSubmit={onSubmit}
           >
             <div class="flex flex-col items-center justify-center px-6 mx-auto  py-10 ">
@@ -177,7 +198,7 @@ function Login() {
 
                     <button
                       type="submit"
-                      class="w-full text-white bg-gray-700 hover:bg-primary-700   focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                      class="w-full text-white bg-blue-700 hover:bg-green-700  focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                     >
                       Sign in
                     </button>
