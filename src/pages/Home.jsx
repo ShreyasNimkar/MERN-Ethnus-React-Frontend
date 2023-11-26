@@ -4,22 +4,11 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
-      {/* <div className="home-div">
-        <section className="heading">
-          <h1>What do you need help with</h1>
-        </section>
-        <p>Please choose an option below</p>
-
-        <Link to="/new-ticket" className="btn btn-reverse btn-block">
-          <AiOutlineQuestionCircle /> Create new ticket
-        </Link>
-        <Link to="/tickets" className="btn btn-block">
-          <AiFillTags /> View my tickets
-        </Link>
-      </div> */}
       <div className="w-full h-[91.5vh] flex bg-bg-home bg-cover bg-fixed">
         <div className="w-[100%] flex flex-col justify-center items-center gap-4">
-          <p className="capitalize text-4xl font-bold p-2 text-fuchsia-50">Tell us your problems !</p>
+          <p className="capitalize text-4xl font-bold p-2 text-fuchsia-50">
+            Tell us your problems !
+          </p>
           <Link
             to="/new-ticket"
             class="cursor-pointer relative inline-flex items-center px-[7.5rem] py-3 overflow-hidden text-lg font-medium text-indigo-600 border-2 border-indigo-600 rounded-full hover:text-white group hover:bg-gray-50"

@@ -10,6 +10,9 @@ import Register from "./pages/Register";
 import Ticket from "./pages/Ticket";
 import Tickets from "./pages/Tickets";
 import Spline from "./components/Spline";
+import Admin from "./pages/Admin";
+import AllTickets from "./pages/AllTickets";
+import AdminTicket from "./pages/AdminTicket";
 function App() {
   return (
     <>
@@ -27,6 +30,15 @@ function App() {
           </Route>
           <Route path="/ticket/:ticketId" element={<PrivateRoute />}>
             <Route path="/ticket/:ticketId" element={<Ticket />} />
+          </Route>
+          <Route path="/admin" element={<PrivateRoute />}>
+            <Route path="/admin" element={<Admin />} />
+          </Route>
+          <Route path="/all-tickets" element={<PrivateRoute />}>
+            <Route path="/all-tickets" element={<AllTickets />} />
+          </Route>
+          <Route path="/admin-tickets" element={<PrivateRoute />}>
+            <Route path="/admin-tickets" element={<AdminTicket />} />
           </Route>
         </Routes>
       </Router>

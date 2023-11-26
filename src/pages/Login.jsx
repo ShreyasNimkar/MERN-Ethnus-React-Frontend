@@ -95,9 +95,8 @@ function Login() {
           </form>
         </section>
       </div> */}
-      <Spline/>
+      <Spline />
       <div className="w-full h-[91.5vh] flex sm:flex-row flex-col">
-      
         <div className="w-[100%] sm:w-[55%] flex-col justify-center items-center gap-4 bg-black"></div>
         <div className="w-[100%] sm:w-[45%] flex flex-col justify-center items-center gap-4 bg-black">
           {/* <form onSubmit={onSubmit} className="w-[80%]">

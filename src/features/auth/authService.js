@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import Cookies from "js-cookie";
 const API_URL = `http://34.121.115.75/service1/api/users`;
 
 // Register user
@@ -16,14 +16,15 @@ const register = async (userData) => {
 
 // Login user
 const login = async (userData) => {
-  const response = await axios.post(API_URL + "/login", userData);
-  console.log("from register", response);
+  const response = await axios.post(`${API_URL}/login`, userData);
   if (response.data) {
+    const { token, ...userDataWithoutToken } = response.data;
     localStorage.setItem("user", JSON.stringify(response.data));
+    localStorage.setItem("isAdmin", response.data.isAdmin || false);
+    Cookies.set("userToken", token, { expires: 30, path: "/" });
   }
   return response.data;
 };
-
 // Logout user
 const logout = () => localStorage.removeItem("user");
 
