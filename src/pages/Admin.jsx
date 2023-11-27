@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Admin = () => {
   return (
     <div>
-      <div className="w-full h-[91.5vh] flex bg-bg-home bg-cover bg-fixed">
+      <div className="w-full h-[92.5vh] flex bg-bg-home bg-cover bg-fixed">
         <div className="w-[100%] flex flex-col justify-center items-center gap-4">
           <p className="capitalize text-4xl font-bold p-2 text-fuchsia-50"></p>
           <Link

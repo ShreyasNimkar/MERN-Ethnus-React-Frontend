@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { register, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
 
-
 function Register() {
   const [formData, setFormData] = useState({
     name: "",
@@ -130,29 +129,27 @@ function Register() {
 
         
       </div> */}
-      <div className="w-full h-[91.5vh] flex sm:flex-row flex-col bg-new-ticket bg-cover bg-fixed">
-      <div className="w-full sm:w-[55%] flex-col justify-center items-center gap-4 text-white">
-          <div class=" p-6 rounded-lg shadow-md flex-col justify-center text-center m-32  ">
-            <p class=" font-extrabold text-3xl h-auto p-4 mb-6">
-              About Our Ticket Support System
-            </p>
-            <p class=" mb-2">
-              Our ticket support system is designed to provide efficient
-              assistance to our valued customers. Whether you have inquiries,
-              need technical support, or have any concerns, our dedicated team
-              is here to help you every step of the way.
-            </p>
-            <p class=" mb-2">
-              With our streamlined ticketing process, you can easily submit your
-              requests, track their progress, and receive timely updates until
-              your issue is resolved satisfactorily.
-            </p>
-            <p class="">
-              We prioritize excellent customer service and aim to address your
-              needs promptly, ensuring a smooth and hassle-free experience for
-              you.
-            </p>
-          </div>
+      <div className="w-full h-[92.5vh] flex sm:flex-row flex-col bg-new-ticket bg-cover bg-fixed">
+        <div className="w-full sm:w-[55%] px-28 text-center flex flex-col h-full justify-center items-center gap-4 text-white">
+          <p class=" font-extrabold text-3xl h-auto p-4 mb-6">
+            About Our Ticket Support System
+          </p>
+          <p class=" mb-2">
+            Our ticket support system is designed to provide efficient
+            assistance to our valued customers. Whether you have inquiries, need
+            technical support, or have any concerns, our dedicated team is here
+            to help you every step of the way.
+          </p>
+          <p class=" mb-2">
+            With our streamlined ticketing process, you can easily submit your
+            requests, track their progress, and receive timely updates until
+            your issue is resolved satisfactorily.
+          </p>
+          <p class="">
+            We prioritize excellent customer service and aim to address your
+            needs promptly, ensuring a smooth and hassle-free experience for
+            you.
+          </p>
         </div>
         <div className="w-[100%] sm:w-[45%] flex flex-col justify-center items-center gap-4">
           <section

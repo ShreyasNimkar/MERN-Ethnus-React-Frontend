@@ -141,14 +141,16 @@ function NewTicket() {
   }
 
   return (
-    <div className="w-full p-14  bg-new-ticket bg-cover bg-fixed h-[91.5vh]">
+    <div className="w-full p-14  bg-new-ticket bg-cover bg-fixed h-[92.5vh]">
       <div className="w-[40%] mx-auto bg-inherit p-8 shadow-md rounded-xl opacity-90">
         <span>
           <Link to="/" className="mb-4 w-[10%]">
             <AiOutlineArrowLeft />
           </Link>
         </span>
-        <h1 className="text-2xl font-bold mb-4 text-fuchsia-50">Create New Ticket</h1>
+        <h1 className="text-2xl font-bold mb-4 text-fuchsia-50">
+          Create New Ticket
+        </h1>
 
         <form onSubmit={onSubmit}>
           <div className="mb-4">

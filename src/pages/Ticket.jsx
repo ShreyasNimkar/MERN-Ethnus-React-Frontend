@@ -88,97 +88,96 @@ function Ticket() {
   }
 
   return (
-    <div className="bg-slate-300 h-[91.5vh]">
-    <div className=" mx-8 mt-8 mb-10 p-4 shadow-xl rounded-xl bg-slate-100">
-      <header className="bg-white p-4 rounded-md shadow-md mb-8">
-        <Link to="/tickets" className="mb-4 w-[10%]">
-          <AiOutlineArrowLeft />
-        </Link>
-        <h2 className="text-2xl font-bold">
-          Ticket ID: {ticket._id}
-          <span
-            className={`ml-2 text-sm font-semibold ${
-              ticket.status === "open"
-                ? "text-green-500"
-                : ticket.status === "in progress"
-                ? "text-yellow-500"
-                : "text-red-500"
-            }`}
-          >
-            {ticket.status}
-          </span>
-        </h2>
-        <p className="text-gray-600">
-          Date submitted: {new Date(ticket.createdAt).toLocaleString("en-US")}
-        </p>
-        <p className="text-gray-600">Product: {ticket.product}</p>
-        <hr className="my-4" />
-        <div className="ticket-desc">
-          <h3 className="text-xl font-semibold mb-2">Description of issue</h3>
-          <p>{ticket.description}</p>
-        </div>
-        <h2 className="text-2xl mt-4 mb-2">Notes</h2>
-      </header>
-            <div className="flex">
-      {ticket.status !== "closed" && (
-        <button
-          className="bg-blue-500 text-white py-2 px-5 rounded-md mx-2"
-          onClick={openModal}
-        >
-          <AiFillPlusCircle className="mr-2 " />
-          Add Note
-        </button>
-      )}
-
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Add Note"
-      >
-        <h2 className="text-2xl font-bold">Add Note</h2>
-        <button
-          className="bg-red-500 text-white p-4 rounded-md absolute top-2 right-2"
-          onClick={closeModal}
-        >
-          <AiFillCloseCircle />
-        </button>
-        <form onSubmit={onNoteSubmit}>
-          <div className="mb-4">
-            <textarea
-              name="noteText"
-              id="noteText"
-              className="w-full p-2 border rounded-md"
-              placeholder="Note text"
-              value={noteText}
-              onChange={(e) => setNoteText(e.target.value)}
-            ></textarea>
-          </div>
-          <div className="mb-4">
-            <button
-              className="bg-blue-500 text-white py-2 px-4 rounded-md"
-              type="submit"
+    <div className="bg-slate-300 h-[92.5vh]">
+      <div className=" mx-8 mt-8 mb-10 p-4 shadow-xl rounded-xl bg-slate-100">
+        <header className="bg-white p-4 rounded-md shadow-md mb-8">
+          <Link to="/tickets" className="mb-4 w-[10%]">
+            <AiOutlineArrowLeft />
+          </Link>
+          <h2 className="text-2xl font-bold">
+            Ticket ID: {ticket._id}
+            <span
+              className={`ml-2 text-sm font-semibold ${
+                ticket.status === "open"
+                  ? "text-green-500"
+                  : ticket.status === "in progress"
+                  ? "text-yellow-500"
+                  : "text-red-500"
+              }`}
             >
-              Submit
-            </button>
+              {ticket.status}
+            </span>
+          </h2>
+          <p className="text-gray-600">
+            Date submitted: {new Date(ticket.createdAt).toLocaleString("en-US")}
+          </p>
+          <p className="text-gray-600">Product: {ticket.product}</p>
+          <hr className="my-4" />
+          <div className="ticket-desc">
+            <h3 className="text-xl font-semibold mb-2">Description of issue</h3>
+            <p>{ticket.description}</p>
           </div>
-        </form>
-      </Modal>
+          <h2 className="text-2xl mt-4 mb-2">Notes</h2>
+        </header>
+        <div className="flex flex-col justify-center items-start">
+          {ticket.status !== "closed" && (
+            <button
+              className="bg-blue-500 text-white w-[20%] py-3 px-5 rounded-md "
+              onClick={openModal}
+            >
+              Add Note
+            </button>
+          )}
 
-      {notes.map((note) => (
-        <NoteItem key={note._id} note={note} />
-      ))}
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Add Note"
+          >
+            <h2 className="text-2xl font-bold">Add Note</h2>
+            <button
+              className="bg-red-500 text-white p-4 rounded-md absolute top-2 right-2"
+              onClick={closeModal}
+            >
+              <AiFillCloseCircle />
+            </button>
+            <form onSubmit={onNoteSubmit}>
+              <div className="mb-4">
+                <textarea
+                  name="noteText"
+                  id="noteText"
+                  className="w-full p-2 border rounded-md"
+                  placeholder="Note text"
+                  value={noteText}
+                  onChange={(e) => setNoteText(e.target.value)}
+                ></textarea>
+              </div>
+              <div className="mb-4">
+                <button
+                  className="bg-blue-500 text-white py-2 px-4 rounded-md"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </Modal>
 
-      {ticket.status !== "closed" && (
-        <button
-          className="bg-red-500 text-white p-4 rounded-md "
-          onClick={onTicketClose}
-        >
-          Close Ticket
-        </button>
-      )}
+          {notes.map((note) => (
+            <NoteItem key={note._id} note={note} />
+          ))}
+
+          {ticket.status !== "closed" && (
+            <button
+              className="bg-red-500 text-white w-[20%] py-3 px-5 rounded-md  "
+              onClick={onTicketClose}
+            >
+              Close Ticket
+            </button>
+          )}
+        </div>
       </div>
-    </div>
     </div>
   );
 }

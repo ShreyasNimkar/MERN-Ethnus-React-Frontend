@@ -8,7 +8,7 @@ function NoteItem({ note }) {
 
   return (
     <div
-      className={`bg-white p-4 rounded-md shadow-md mb-4`}
+      className={`bg-white w-[100%] p-4 rounded-md shadow-md my-2`}
       style={{
         backgroundColor: noteBackgroundColor,
         color: noteTextColor,

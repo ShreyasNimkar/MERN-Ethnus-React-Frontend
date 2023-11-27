@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 // import { useWindowHeight } from "@react-hook/window-size";
 
@@ -16,6 +17,7 @@ function Header() {
     dispatch(logout());
     dispatch(reset());
     navigate("/");
+    toast.success("You have been logged out");
   };
 
   const [modalVisibility, setModalVisibility] = useState(false);
@@ -50,10 +52,7 @@ function Header() {
     //   </ul>
     // </header>
     <>
-    
-      <div
-        className="hidden lg:flex justify-between items-center  h-[4rem] px-20 text-black z-[100] transition-all duration-300 ease-in-out shadow-lg bg-slate-800 "
-      >
+      <div className="hidden lg:flex justify-between items-center  h-[7.5vh] px-20 text-black z-[100] transition-all duration-300 ease-in-out shadow-lg bg-slate-800 ">
         <Link
           to="/"
           className="w-[20%] p-2 flex justify-around items-center rounded-xl mx-2 bg-blue-500 text-fuchsia-50 text-md font-bold"
@@ -69,7 +68,10 @@ function Header() {
                     </div> */}
 
           {user ? (
-            <div className="cursor-pointer rounded-xl mx-2 bg-blue-500 text-fuchsia-50 text-md font-bold px-3 py-2 " onClick={onLogout}>
+            <div
+              className="cursor-pointer rounded-xl mx-2 bg-blue-500 text-fuchsia-50 text-md font-bold px-3 py-2 "
+              onClick={onLogout}
+            >
               Logout
             </div>
           ) : (
