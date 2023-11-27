@@ -29,13 +29,14 @@ function Tickets() {
   }
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className="w-full h-[91.5vh] bg-slate-200">
+    <div className="container mx-auto mt-8 p-4 ">
       <Link to="/" className="mb-4 w-[10%]">
         <AiOutlineArrowLeft />
       </Link>
-      <h1 className="text-3xl font-bold mb-4">Tickets</h1>
-      <div className="bg-white p-4 rounded-md shadow-md">
-        <div className="flex font-semibold pb-3 text-gray-700">
+      <h1 className="text-3xl font-bold mb-4 py-4">Tickets</h1>
+      <div className="p-4 rounded-md shadow-md bg-slate-100">
+        <div className="flex font-bold pb-3 text-gray-700">
           <div className="w-[20%]">Date</div>
           <div className="w-[30%]">Product</div>
           <div className="w-[30%]">Status</div>
@@ -45,6 +46,7 @@ function Tickets() {
           <TicketItem key={ticket._id} ticket={ticket} />
         ))}
       </div>
+    </div>
     </div>
   );
 }

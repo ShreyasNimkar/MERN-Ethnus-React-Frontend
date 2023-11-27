@@ -88,7 +88,8 @@ function Ticket() {
   }
 
   return (
-    <div className=" mx-8 mt-8 mb-10">
+    <div className="bg-slate-300 h-[91.5vh]">
+    <div className=" mx-8 mt-8 mb-10 p-4 shadow-xl rounded-xl bg-slate-100">
       <header className="bg-white p-4 rounded-md shadow-md mb-8">
         <Link to="/tickets" className="mb-4 w-[10%]">
           <AiOutlineArrowLeft />
@@ -118,13 +119,13 @@ function Ticket() {
         </div>
         <h2 className="text-2xl mt-4 mb-2">Notes</h2>
       </header>
-
+            <div className="flex">
       {ticket.status !== "closed" && (
         <button
-          className="bg-blue-500 text-white py-2 px-5 rounded-md mb-4"
+          className="bg-blue-500 text-white py-2 px-5 rounded-md mx-2"
           onClick={openModal}
         >
-          <AiFillPlusCircle className="mr-2" />
+          <AiFillPlusCircle className="mr-2 " />
           Add Note
         </button>
       )}
@@ -135,9 +136,9 @@ function Ticket() {
         style={customStyles}
         contentLabel="Add Note"
       >
-        <h2 className="text-2xl font-bold mb-4">Add Note</h2>
+        <h2 className="text-2xl font-bold">Add Note</h2>
         <button
-          className="bg-red-500 text-white py-2 px-4 rounded-md absolute top-2 right-2"
+          className="bg-red-500 text-white p-4 rounded-md absolute top-2 right-2"
           onClick={closeModal}
         >
           <AiFillCloseCircle />
@@ -170,12 +171,14 @@ function Ticket() {
 
       {ticket.status !== "closed" && (
         <button
-          className="bg-red-500 text-white py-2 px-4 rounded-md"
+          className="bg-red-500 text-white p-4 rounded-md "
           onClick={onTicketClose}
         >
           Close Ticket
         </button>
       )}
+      </div>
+    </div>
     </div>
   );
 }
