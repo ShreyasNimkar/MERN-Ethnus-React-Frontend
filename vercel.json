@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "src": "/service1/api/(.*)",
+      "dest": "http://34.121.115.75/service1/api/$1"
+    }
+  ]
+}
